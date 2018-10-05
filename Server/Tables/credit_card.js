@@ -9,16 +9,5 @@ var credit_card=con;
     if (err) throw err;
     console.log("1 record inserted");
   });
-// var token ={
-//   generateAuthToken : function(username){
-//     var access='auth';
-//     var token=jwt.sign({username: username,access},'specialKEy');
-//     var decoded=jwt.verify(token,'specialKEy');
-//     console.log(decoded);
-//     console.log(token);
-//     return token;
-//   }
-//   current_token:"";
-// };
 
 module.exports={credit_card};

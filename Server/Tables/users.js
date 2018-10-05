@@ -12,10 +12,6 @@ var users=con;
   });
 
 
-  users.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-  });
 // var token ={
 //   generateAuthToken : function(username){
 //     var access='auth';

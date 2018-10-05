@@ -25,6 +25,11 @@ var {credit_card}=require('./Tables/credit_card.js');
 //var {insurance_id}=require('./tables/insurance_id.js');
 //var {insurance_add}=require('./tables/insurance_add.js');
 //var {insurance_bank}=require('./tables/insurance_bank.js');
+
+var {mailmake}=require('./email.js');
+var {mailsend}=require('./email.js');
+var {app}=require('./views.js');
+var {nexmo}=require('./smshandler.js');
 app.post('/home',(req,res)=>{
   let stmt = `INSERT INTO contact(name_home,email,message)
             VALUES(?,?,?)`;
