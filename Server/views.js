@@ -32,4 +32,5 @@ app.get('/about',(req,res)=>{
 app.get('/contact',(req,res)=>{
   res.render('test/contact.hbs');
 });
+
 module.exports={app};
