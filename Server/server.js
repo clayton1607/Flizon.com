@@ -114,27 +114,3 @@ app.post('/signup',(req,res)=>{
     //res.render('Public/Home/Aunthentication/otp.hbs');
   });
 });
-
-
-
-app.get('/auction',(req,res)=>{
-  auction_ad.query('select * from auction_ad order by msp',(err,rows)=>{
-     if(err) console.log("BAD");
-
-     var list=[];
-     var count;
-     var lengthr=8;
-     for(count=0;count<lengthr;count++){
-
-       var ask = {
-                    'auction_caption':rows[count].qno,
-                    'description':rows[count].questions,
-
-                }
-
-                list.push(ask);
-     }
-      res.render('auction.hbs',{list});
-   });
-
-});
