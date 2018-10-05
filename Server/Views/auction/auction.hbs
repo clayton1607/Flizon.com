@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Auction page</title>
+      <link rel="stylesheet" href="../css/auction.css">
+    <script type="text/javascript">
+      function visible(x){
+            x.style.display= block;
+
+      }
+      function invisible(x){
+            x.style.display= none;
+
+      }
+    </script>
+  </head>
+  <body>
+    <div class="product-view">
+
+                            <!--/.breadcrumb-->
+                            <div class="product-details cf">
+
+                                <div class="product-img-box">
+                                    <div style="height:256px;width:358px;" class="zoomWrapper"><img id="zoom-01" class="imgzoom" style="max-width: 500px; max-height: 500px; position: absolute;" src="../image/index.jpeg" data-zoom-image="images/Product/201735133155_Amazon-India-Gift-Card.png"></div>
+
+
+                                </div>
+                                <!--/.product-img-box-->
+
+                                <div class="product-bid">
+                                    <h1 class="product-title">
+                                        {{}}</h1>
+                                    <!--/.product-title-->
+                                    <div class="product-bid-row">
+                                        <div class="timer-box">
+                                            <div class="timer-box-content">
+                                                <div class="timer-block">
+                                                    <div id="dvzoom16733" class=""> <span id="timer16733" class="timer" data-transition="customZoomTrans2" style="color: rgb(61, 77, 101);">Duration</span>  <label id="dt16733" style="display: none;">2018,9,5,21,46,0,0</label>
+                                                    <br>
+                                                    <span class="bidder"><label id="UserName16733" style="margin-bottom: 0px;">Top bidder name</label></span></div>
+                                                </div>
+                                                <!--/.timer-block-->
+                                            </div>
+                                            <!--/.timer-box-content-->
+                                        </div>
+                                        <!--/.timer-box-->
+                                        <div class="bid-box" style="height: 125px;">
+                                            <div class="auction-price">
+                                                Auction price <span>₹
+                                                    <label id="Price16733" style="margin-bottom: 0px;">0.10</label></span>
+
+                                                MSP <span>₹
+                                                    <label id="Price16733" style="margin-bottom: 0px;">0.10</label></span>
+                                            </div>
+                                            <!--/.auction-price-->
+                                            <div class="bid-option-row">
+                                                <span class="bid-buttons">
+
+                                                <span class="bid-now-button">
+                                                    <input width="800px" id="BidNow16733" value="Bid Now" title="Bid Now" class="button btn-lg bid-now" onclick="BidNowClick(16733)" type="button">
+                                                </span>
+
+                                            </div>
+                                            <!--/.bid-option-row-->
+                                        </div>
+                                        <!--/.bid-box-->
+                                    </div>
+                                    <!--/.product-bid-row-->
+                                    <div class="tab-data">
+                                        <ul class="tabnav cf">
+                                            <li class="active"><a href="#" data-rel="auction-information">Auction Information</a></li>
+                                            <li><a href="#" data-rel="bidding-history">Bidding History</a></li>
+                                            <li><a href="#" data-rel="delivery-information">Delivery Information</a></li>
+                                        </ul>
+                                        <!--/.tabnav -->
+                                        <div class="tab-container">
+                                            <div class="tabcontent" id="auction-information" style="display: block;">
+                                                <div class="auction-info">
+                                                    <ul>
+                                                        <li>
+                                                            <span>
+                                                                <span id="Body_lblAuctionID">5555</span></span>
+                                                            Auction ID
+                                                        </li>
+                                                        <li>
+                                                            <span>Rs&nbsp;
+                                                                <span id="Body_lblPrice"> 1000.00</span></span>
+                                                            Price
+                                                        </li>
+                                                        <li>
+                                                            <span>Rs&nbsp;
+                                                                <span id="Body_lblShipping"> 150.00</span></span>
+                                                            Shipping &amp; Processing Fees
+                                                        </li>
+                                                        <li>
+                                                            <span>
+                                                                <span id="Body_lblBidReset">10 Second</span></span>
+                                                            Bid Reset Time
+                                                        </li>
+                                                        <li>
+                                                            <span>
+                                                                <span id="Body_lblPerBidcredit">3x</span></span>
+                                                            Credit used per bid
+                                                        </li>
+                                                        <li>
+                                                            <span>
+                                                                <span id="Body_lblAuctionType">10 Paisa</span></span>
+                                                            Auction Type
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!--/.auction-info-->
+                                            </div>
+                                            <!--/.tabcontent-->
+                                            <div class="tabcontent" id="bidding-history" onmouseover="visible(this)" onmouseout="invisible(this)" style="display: none;">
+                                                <div class="bidding-history">
+                                                    <div>
+    	<table class="table table-bordered table-striped table-hover" rules="all" id="Body_grdBidLog" style="border-collapse:collapse;" cellspacing="0" border="1">
+    		<tbody><tr class="tableheaderstyle">
+    			<th scope="col">Price</th><th scope="col">Bid Time</th><th scope="col">User</th>
+    		</tr><tr>
+    			<td>₹ 0.10</td><td>05-10-2018 14:46:45</td><td>Amalmktk</td>
+    		</tr>
+    	</tbody></table>
+    </div>
+                                                </div>
+                                                <!--/.bidding-history-->
+                                            </div>
+                                            <!--/.tabcontent -->
+                                            <div class="tabcontent" id="delivery-information" style="display: none;">
+                                                <p>
+                                                    Delivered in 48 hours by Email
+                                                </p>
+                                            </div>
+                                            <!--/.tabcontent -->
+                                        </div>
+                                        <!--/.tab-container -->
+                                    </div>
+                                    <!--/.tab-data-->
+                                </div>
+                                <!--/.product-bid-->
+                            </div>
+                            <!--/.product-details-->
+                            <div class="product-overview">
+                                <h2>Product Overview</h2>
+                                <h3>
+                                    <span id="Body_ltrProductName1">Amazon Rs.1000 Gift Card</span></h3>
+                                <div style="margin-left: 20px;">
+                                    <div class="table-responsive">
+                                            <p><strong>After winning this auction, you will get {{}} Worth Rs{{}} </strong></p>
+
+    <p><strong>Product Description:{{}}</strong></p>
+
+    <p><strong>{{}} will be delivered in 48 to 72 hours using your Flizon registered mail ID to your billing address.</strong></p>
+
+    <p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.product-overview-->
+                        </div>
+
+    </table>
+
+  </body>
+</html>
