@@ -6,8 +6,10 @@ const hbs =require('hbs');
 //const mysql=require('mysql');
 const bodyParser = require('body-parser');
 var {auction}=require('./Tables/auction_ad.js');
+var {sig}=require('./views3.js');
+var exp =sig;
+var {username_curent}=require('./views3.js');
 
-var exp =express();
 //ar {authenticate}=require('./middleware/authenticate.js');
 var {users}=require('./Tables/users.js');
 exp.use(express.static(__dirname+'/Public'));
@@ -17,7 +19,10 @@ console.log(__dirname+'/Public');
 exp.set('view engine','hbs');
 
 
-exp.get('/auction',(req,res)=>{
+exp.get('/me/auction',(req,res)=>{
+  var username=req.query.usern;
+  console.log("username in auc"+username_curent);
+
   auction.query('select * from auction_ad order by msp desc',(err,rows)=>{
      if(err) console.log("BAD");
 
@@ -101,17 +106,18 @@ exp.get('/auction_disp',(req,res)=>{
        var second_name=rows[1].username;
        var second_bid=rows[1].bid_value;
      }
-     res.render('test/auction-display.hbs',{zero2,zero3,zero4,zero5,highest_name,highest_bid,second_name,second_bid});
+     res.render('test/auction-display.hbs',{username,zero2,zero3,zero4,zero5,highest_name,highest_bid,second_name,second_bid});
 
    });
 });
 // });
 exp.post('/bid',urlencodedParser,(req,res)=>{
+  var usernamex=req.query.username;
   var bidval=req.body.bidv;
   var auc_no=req.query.zero2;
   auction.query('select * from bidder where auction_no=? order by bid_value desc',auc_no,(err,rows)=>{
-     if(err) console.log("BAD");
-// console.log(rows[0]);
+     if(err) console.log("BAaad");
+console.log(req.user);
 
      var highest_bid=rows[0].bid_value;
 
@@ -119,7 +125,7 @@ if(highest_bid>=bidval){
   res.redirect('back');
 }
     else {
-      var values=[[auc_no,"Solomon",bidval]];
+      var values=[[auc_no,"Anol",bidval]];
       auction.query('insert into bidder (auction_no,username,bid_value) values ?',[values],(err,rows)=>{
          if(err) console.log("BAD");
          res.redirect('back');
@@ -129,7 +135,63 @@ if(highest_bid>=bidval){
 
    });
 });
+exp.get('/me/add',(req,res)=>{
+  res.render('test/add.hbs');
+})
+exp.post('/me/addproduct',urlencodedParser,(req,res)=>{
+  var auction_type=req.body.auction_type;
 
+  if(auction_type==1){
+
+    var auc_caption=req.body.auc_caption ;//caption
+    var auc_category=req.body.auc_category ;//category
+    var auc_condition=req.body.auc_condition ;
+    var auc_shape=req.body.shape ;
+    var auc_quantity=req.body.quantity;
+
+var description = "Grain condition is "+auc_condition+"Grain Shape is :"+auc_shape+"Quantity is :"+auc_quantity;
+
+  }
+  else if (auction_type==2) {
+    var auc_caption=req.body.auc_caption2 ;//caption
+    var auc_category=req.body.auc_category2 ;//category
+    var auc_condition=req.body.auc_condition2 ;
+    var auc_quantity=req.body.quantity2;
+
+var description = "Fruit condition is "+auc_condition+"Quantity is :"+auc_quantity;
+  }
+  else if (auction_type==3) {
+    var auc_caption=req.body.auc_caption3;//caption
+    var auc_category=req.body.auc_caption3;//category
+    var auc_condition=req.body.auc_condition3 ;
+    var auc_quantity=req.body.quantity3;
+
+var description = "Vegetable condition is "+auc_condition+"Quantity is :"+auc_quantity;
+  }
+  else if (auction_type==4) {
+    var auc_caption=req.body.auc_caption4;//caption
+    var auc_category=req.body.auc_category4;//category
+    var auc_quantity=req.body.quantity4;
+
+var description = "Quantity is :"+auc_quantity;
+  }
+  else if (auction_type==5) {
+    var auc_caption=req.body.auc_caption5;//caption
+    var auc_category=req.body.auc_caption5;//category
+    var auc_quantity=req.body.quantity5;
+
+var description = "Quantity is :"+auc_quantity;
+  }
+  var auc_msp= req.body.msp;
+
+var values=[["Lenson",auc_caption,description,auc_category,500]];
+  auction.query('insert into auction_ad (username,auction_caption,auc_description,category,msp,shipping_fee) values ?',[values],(err,rows)=>{
+     if(err) console.log("BAD");
+     console.log(rows);
+     console.log("Auction table updated");
+});
+
+});
 
 
 module.exports={exp};

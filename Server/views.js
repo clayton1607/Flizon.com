@@ -37,7 +37,7 @@ var app=exp;
 //     done(err, user);
 //   });
 // });
-var app =express();
+// var app =express();
 
 //ar {authenticate}=require('./middleware/authenticate.js');
 var {users}=require('./Tables/users.js');
@@ -75,6 +75,9 @@ app.get('/me/faq',(req,res)=>{
 app.get('/me/about',(req,res)=>{
   res.render('test/aboutl.hbs');
 });
+// app.get('/me/auction',(req,res)=>{
+//   res.render('test/auction.hbs');
+// });
 app.get('/me/contact',(req,res)=>{
   res.render('test/contactl.hbs');
 });
@@ -96,7 +99,7 @@ app.get('/logout',(req,res)=>{
   res.redirect('/');
 });
 
-app.get('/me/addproduct',(req,res)=>{
+app.get('/addproduct',(req,res)=>{
   res.render('test/add.hbs');
 });
 
