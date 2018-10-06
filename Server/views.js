@@ -6,8 +6,9 @@ const hbs =require('hbs');
 //const nodemailer=require('nodemailer');
 //const mysql=require('mysql');
 const bodyParser = require('body-parser');
+const {exp} = require('./views2.js');
+var app=exp;
 
-var app =express();
 //ar {authenticate}=require('./middleware/authenticate.js');
 var {users}=require('./Tables/users.js');
 app.use(express.static(__dirname+'/Public'));

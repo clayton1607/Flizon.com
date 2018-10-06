@@ -1,8 +1,8 @@
 const mysql=require('mysql');
 var con = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "password",
+  user: "solo",
+  password: "solo",
   database: "mydb"
 });
 
