@@ -15,6 +15,8 @@
         <link href="/vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
         <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
         <!-- PAGE LEVEL PLUGIN STYLES -->
         <link href="/css/animate.css" rel="stylesheet">
 
@@ -76,66 +78,167 @@
     <div class="parallax-content container">
         <h1 class="carousel-title" style="color: #14c3c9">ADD AUCTION ITEM</h1>
         <h3>Kindly give details of your product.</h3>
-        <form>
+        <form action="/me/addproduct" method="post">
 
                 <div class="form-group"> <!-- Full Name -->
                     <label for="full_name_id" class="control-label" style="color: white;">Product</label>
-                    <select class="form-control" id="state_id" name="name">
-                            <option value="">Food Grain</option>
-                            <option value="">Fruits</option>
-                            <option value="">Vegetables</option>
-                            <option value="">Fertilizers</option>
-                            <option value="">Miscellaneous</option>
+                    <select class="form-control" id="state_idz" name="auction_type">
+                            <option value="1">Food Grain</option>
+                            <option value="2">Fruits</option>
+                            <option value="3">Vegetables</option>
+                            <option value="4">Fertilizers</option>
+                            <option value="5">Miscellaneous</option>
                     </select>
                 </div>
+<script type="text/javascript">
 
-                <div class="form-group"> <!-- Street 1 -->
+
+                      $('#state_idz').on('change', function () {
+                    if(this.value === "1"){
+                    $("#grainz1").show();
+                    $("#grainz2").show();
+                    $("#grainz3").show();
+                    $("#grainz4").show();
+                    $("#grainz5").show();
+                    $("#fruitz1").hide();
+                    $("#fruitz2").hide();
+                    $("#fruitz3").hide();
+                    $("#fruitz4").hide();
+                    $("#vegetablez1").hide();
+                    $("#vegetablez2").hide();
+                    $("#vegetablez3").hide();
+                    $("#fertilizerz1").hide();
+                    $("#fertilizerz2").hide();
+                    $("#fertilizerz3").hide();
+                    $("#miscellaneouz1").hide();
+                    $("#miscellaneouz2").hide();
+
+                  } else if (this.value === "2"){
+                    $("#grainz1").hide();
+                    $("#grainz2").hide();
+                    $("#grainz3").hide();
+                    $("#grainz4").hide();
+                    $("#grainz5").hide();
+                    $("#fruitz1").show();
+                    $("#fruitz2").show();
+                    $("#fruitz3").show();
+                    $("#fruitz4").show();
+                    $("#vegetablez1").hide();
+                    $("#vegetablez2").hide();
+                    $("#vegetablez3").hide();
+                    $("#fertilizerz1").hide();
+                    $("#fertilizerz2").hide();
+                    $("#fertilizerz3").hide();
+                    $("#miscellaneouz1").hide();
+                    $("#miscellaneouz2").hide();
+
+                  }else if (this.value === "3"){
+                    $("#grainz1").hide();
+                    $("#grainz2").hide();
+                    $("#grainz3").hide();
+                    $("#grainz4").hide();
+                    $("#grainz5").hide();
+                    $("#fruitz1").hide();
+                    $("#fruitz2").hide();
+                    $("#fruitz3").hide();
+                    $("#fruitz4").hide();
+                    $("#vegetablez1").show();
+                    $("#vegetablez2").show();
+                    $("#vegetablez3").show();
+                    $("#fertilizerz1").hide();
+                    $("#fertilizerz2").hide();
+                    $("#fertilizerz3").hide();
+                    $("#miscellaneouz1").hide();
+                    $("#miscellaneouz2").hide();
+
+                  }else if (this.value === "4"){
+                    $("#grainz1").hide();
+                    $("#grainz2").hide();
+                    $("#grainz3").hide();
+                    $("#grainz4").hide();
+                    $("#grainz5").hide();
+                    $("#fruitz1").hide();
+                    $("#fruitz2").hide();
+                    $("#fruitz3").hide();
+                    $("#fruitz4").hide();
+                    $("#vegetablez1").hide();
+                    $("#vegetablez2").hide();
+                    $("#vegetablez3").hide();
+                    $("#fertilizerz1").show();
+                    $("#fertilizerz2").show();
+                    $("#fertilizerz3").show();
+                    $("#miscellaneouz1").hide();
+                    $("#miscellaneouz2").hide();
+
+                  }else if (this.value === "5"){
+                    $("#grainz1").hide();
+                    $("#grainz2").hide();
+                    $("#grainz3").hide();
+                    $("#grainz4").hide();
+                    $("#grainz5").hide();
+                    $("#fruitz1").hide();
+                    $("#fruitz2").hide();
+                    $("#fruitz3").hide();
+                    $("#fruitz4").hide();
+                    $("#vegetablez1").hide();
+                    $("#vegetablez2").hide();
+                    $("#vegetablez3").hide();
+                    $("#fertilizerz1").hide();
+                    $("#fertilizerz2").hide();
+                    $("#fertilizerz3").hide();
+                    $("#miscellaneouz1").show();
+                    $("#miscellaneouz2").show();
+                  }
+                });
+</script>
+
+                <div class="form-group" id="grainz1"> <!-- Street 1 -->
                     <label for="street1_id" class="control-label" style="color: white;">Type:</label>
-                    <input type="text" class="form-control" id="street1_id" name="street1" placeholder="Enter Type">
+                    <input type="text" class="form-control" id="street1_id" name="auc_caption" placeholder="Enter Type">
                 </div>
 
-                <div class="form-group"> <!-- Street 2 -->
+                <div class="form-group" id="grainz2"> <!-- Street 2 -->
                     <label for="street2_id" class="control-label" style="color: white;">Category:</label>
-                    <input type="text" class="form-control" id="street2_id" name="street2" placeholder="Eg: Basmati Rice">
+                    <input type="text" class="form-control" id="street2_id" name="category" placeholder="Eg: Basmati Rice">
                 </div>
 
-                <div class="form-group"> <!-- City-->
+                <div class="form-group" id="grainz3"> <!-- City-->
                     <label for="city_id" class="control-label"style="color: white;">Condition:</label>
-                    <select class="form-control" id="state_id" name="city1">
-                        <option value="">Full Grain</option>
-                        <option value="">Broken Grain</option>
+                    <select class="form-control" id="state_id" name="condition">
+                        <option value="Full Grain">Full Grain</option>
+                        <option value="Broken Grain">Broken Grain</option>
                     </select>
                 </div>
 
-                <div class="form-group"> <!-- State Button -->
+                <div class="form-group" id="grainz4"> <!-- State Button -->
                     <label for="state_id" class="control-label" style="color: white;">Grain Shape:</label>
-                    <select class="form-control" id="state_id" name="state1">
+                    <select class="form-control" id="state_id" name="shape">
                         <option value="">Round</option>
                         <option value="">Bold</option>
                         <option value="">Thin</option>
                     </select>
                 </div>
 
-                <div class="form-group"> <!-- Zip Code-->
+                <div class="form-group" id="grainz5">  <!-- Zip Code-->
                     <label for="zip_id" class="control-label" style="color: white;">Quantity:</label>
-                    <input type="text" class="form-control" id="zip_id" name="zip1" placeholder="In Kg">
+                    <input type="text" class="form-control" id="zip_id" name="quantity" placeholder="In Kg">
                 </div>
                 <!--========== FRUITS ==========-->
 
 
-                <div class="form-group"> <!-- Street 1 -->
+                <div class="form-group" id="fruitz1"> <!-- Street 1 -->
                     <label for="street1_id" class="control-label" style="color: white;">Type:</label>
-                    <input type="text" class="form-control" id="street1_id" name="street10" placeholder="Enter Fruit">
+                    <input type="text" class="form-control" id="street1_id" name="auc_caption2" placeholder="Enter Fruit">
                 </div>
 
-                <div class="form-group"> <!-- Street 2 -->
+                <div class="form-group" id="fruitz2"> <!-- Street 2 -->
                     <label for="street2_id" class="control-label" style="color: white;">Category:</label>
-                    <input type="text" class="form-control" id="street2_id" name="street20" placeholder="Eg: Alphonso Mangoe">
+                    <input type="text" class="form-control" id="street2_id" name="category2" placeholder="Eg: Alphonso Mangoe">
                 </div>
 
-                <div class="form-group"> <!-- City-->
+                <div class="form-group" id="fruitz3"> <!-- City-->
                     <label for="city_id" class="control-label" style="color: white;">Condition:</label>
-                    <select class="form-control" id="state_id" name="city10">
+                    <select class="form-control" id="state_id" name="condition2">
                         <option value="">Raw</option>
                         <option value="">Ripe</option>
                     </select>
@@ -143,37 +246,37 @@
 
 
 
-                <div class="form-group"> <!-- Zip Code-->
+                <div class="form-group" id="fruitz4"> <!-- Zip Code-->
                     <label for="zip_id" class="control-label" style="color: white;">Quantity:</label>
-                    <input type="text" class="form-control" id="zip_id" name="zip10" placeholder="In Kg">
+                    <input type="text" class="form-control" id="zip_id" name="quantity2" placeholder="In Kg">
                 </div>
 <!--========== VEGETABLES ==========-->
 
 
-                <div class="form-group"> <!-- Street 1 -->
+                <div class="form-group" id="vegetablez1"> <!-- Street 1 -->
                     <label for="street1_id" class="control-label" style="color: white;">Type:</label>
-                    <input type="text" class="form-control" id="street1_id" name="street100" placeholder="Enter Type">
+                    <input type="text" class="form-control" id="street1_id" name="auc_caption3" placeholder="Enter Type">
                 </div>
 
-                <div class="form-group"> <!-- City-->
+                <div class="form-group" id="vegetablez2"> <!-- City-->
                     <label for="city_id" class="control-label" style="color: white;">Condition:</label>
-                    <select class="form-control" id="state_id" name="city100">
+                    <select class="form-control" id="state_id" name="condition3">
                         <option value="">Raw</option>
                         <option value="">Ripe</option>
                     </select>
                 </div>
 
-                <div class="form-group"> <!-- Zip Code-->
+                <div class="form-group" id="vegetablez3"> <!-- Zip Code-->
                     <label for="zip_id" class="control-label" style="color: white;">Quantity:</label>
-                    <input type="text" class="form-control" id="zip_id" name="zip100" placeholder="In Kg">
+                    <input type="text" class="form-control" id="zip_id" name="quantity3" placeholder="In Kg">
                 </div>
 <!--========== FERTILIZERS ==========-->
 
 
 
-                <div class="form-group"> <!-- City-->
+                <div class="form-group" id="fertilizerz1"> <!-- City-->
                     <label for="city_id" class="control-label" style="color: white;">Condition:</label>
-                    <select class="form-control" id="state_id" name="city1000">
+                    <select class="form-control" id="state_id" name="auc_caption4">
                         <option value="">Organic</option>
                         <option value="">Compound</option>
                         <option value="">Potassium</option>
@@ -181,25 +284,25 @@
                     </select>
                 </div>
 
-                <div class="form-group"> <!-- State Button -->
+                <div class="form-group" id="fertilizerz2"> <!-- State Button -->
                     <label for="state_id" class="control-label" style="color: white;">State:</label>
-                    <select class="form-control" id="state_id" name="state1000">
+                    <select class="form-control" id="state_id" name="category4">
                         <option value="">Liquid</option>
                         <option value="">Solid</option>
                     </select>
                 </div>
 
-                <div class="form-group"> <!-- Zip Code-->
+                <div class="form-group" id="fertilizerz3"> <!-- Zip Code-->
                     <label for="zip_id" class="control-label" style="color: white;">Quantity:</label>
-                    <input type="text" class="form-control" id="zip_id" name="zip1000" placeholder="In Kg">
+                    <input type="text" class="form-control" id="zip_id" name="quantity4" placeholder="In Kg">
                 </div>
                 <!--========== MISC. ==========-->
 
 
 
-                <div class="form-group"> <!-- State Button -->
+                <div class="form-group" id="miscellaneouz1"> <!-- State Button -->
                     <label for="state_id" class="control-label" style="color: white;">Type:</label>
-                    <select class="form-control" id="state_id" name="state10000">
+                    <select class="form-control" id="state_id" name="auc_caption5">
                             <option value="">Milk</option>
                             <option value="">Cheese</option>
                             <option value="">Butter</option>
@@ -207,11 +310,15 @@
                     </select>
                 </div>
 
-                <div class="form-group"> <!-- Zip Code-->
+                <div class="form-group" id="miscellaneouz2"> <!-- Zip Code-->
                     <label for="zip_id" class="control-label" style="color: white;">Quantity:</label>
-                    <input type="text" class="form-control" id="zip_id" name="zip10000" placeholder="In Kg/Ltr/Units">
+                    <input type="text" class="form-control" id="zip_id" name="quantity5" placeholder="In Kg/Ltr/Units">
                 </div>
 
+                <div class="form-group" id="miscellaneouz2"> <!-- Zip Code-->
+                    <label for="zip_id" class="control-label" style="color: white;">MSP</label>
+                    <input type="text" class="form-control" id="zip_id" name="msp" placeholder="Enter MSP">
+                </div>
 
                 <div class="form-group"> <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary btn-lg" >ADD!</button>
