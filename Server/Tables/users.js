@@ -25,3 +25,4 @@ var users=con;
 // };
 
 module.exports={users};
+// insert into users(username,email,password,personal,last_login,signup_date) values("Lenson","len.v.dan@gmail.com","len",false,"24/07/2018","23/07/2018");
