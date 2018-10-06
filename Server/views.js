@@ -96,6 +96,9 @@ app.get('/me/addproduct',(req,res)=>{
 });
 
 app.get('/me/personal',(req,res)=>{
-  res.render('test/detail.hbs');
+  res.render('test/personal.hbs');
+});
+app.get('/me/credit_card',(req,res)=>{
+  res.render('test/creditCard.hbs');
 });
 module.exports={app};
